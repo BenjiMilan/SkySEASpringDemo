@@ -1,10 +1,13 @@
-package com.qa.personproject.entities;
+package com.qa.personproject.controllers;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import javax.websocket.server.PathParam;
 
 import org.springframework.web.bind.annotation.*;
+
+import com.qa.personproject.entities.Person;
+import com.qa.personproject.services.PersonService;
 
 @RestController
 @RequestMapping("people")
@@ -24,7 +27,7 @@ public class PersonController {
 
     @ResponseBody
     @GetMapping(value = "/all", produces = "application/json")
-    public ArrayList<Person> getPeople() {
+    public List<Person> getPeople() {
         return service.getPeople();
     }
 
